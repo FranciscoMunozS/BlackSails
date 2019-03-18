@@ -1,0 +1,23 @@
+<div class="card" id="login">
+  <h3 class="card-header text-center">Iniciar Sesión</h3>
+  <div class="card-body">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs text-center">
+        <%= f.input :email,
+                    label: 'Correo Electronico',
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    label: 'Contraseña',
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
+  </div>
+  <div class="card-footer">
+    <div class="form-actions">
+      <%= f.button :submit, "Iniciar Sesión", class: 'btn btn-primary btn-block' %>
+    </div>
+    <% end %>
+  </div>
+</div>

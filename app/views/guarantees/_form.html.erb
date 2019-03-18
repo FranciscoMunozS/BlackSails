@@ -1,0 +1,54 @@
+<%= simple_form_for(@guarantee) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-group">
+    <div class="card">
+      <h4 class="card-header">Datos de Ingreso</h4>
+      <div class="card-body">
+        <%= f.input :guarantee_type, label: "Tipo Garantia", include_blank: false %>
+        <%= f.input :income_number, label: "Numero de Ingreso" %>
+        <%= f.input :income_applicant, label: "Solicitante de Ingreso" %>
+        <%= f.input :income_date, as: :string, label: "Fecha de Ingreso", input_html: { class: 'datepicker0' } %>
+      </div>
+    </div>
+    <br>
+    <div class="card">
+      <h4 class="card-header">Datos Prestador</h4>
+      <div class="card-body">
+        <%= f.input :borrower_name, label: "Nombre Tomador" %>
+        <%= f.input :borrower_id, label: "ID Tomador", as: :string %>
+      </div>
+    </div>
+    <br>
+    <div class="card">
+      <h4 class="card-header">Bancos</h4>
+      <div class="card-body">
+        <%= f.input :bank_name, label: "Nombre Banco" %>
+      </div>
+    </div>
+    <br>
+    <div class="card">
+      <h4 class="card-header">Detalles de la Garantía</h4>
+      <div class="card-body">
+        <%= f.input :guarantee_number, label: "Numero de Garantía" %>
+        <%= f.input :value_guarantee, label: "Valor Garantia", as: :string %>
+        <%= f.input :currency_guarantee, label: "Moneda Garantía" %>
+        <% if @guarantee.guarantee_type === 'VALE_VISTA' %>
+          <%= f.input :due_date, as: :string, label: "Fecha de Vencimiento", disabled:true, input_html: { class: 'datepicker1' } %>
+        <% else %>
+          <%= f.input :due_date, as: :string, label: "Fecha de Vencimiento", input_html: { class: 'datepicker1' } %>
+        <% end %>
+        <%= f.input :bail, label: "Caución" %>
+        <%= f.input :detail, label: "Detalle" %>
+        <%= f.input :bip, label: "Codigo BIP" %>
+        <%= f.input :email, label: "Correo Electronico" %>
+        <%= f.input :observation, label: "Observación", input_html: { rows: 2 } %>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= link_to 'Cancelar', root_path, class: 'btn btn-light' %>
+  </div>
+<% end %>

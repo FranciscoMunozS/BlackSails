@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  correlative: 1
+  income_number: MyString
+  income_date: 2019-03-05
+  income_applicant: MyString
+  borrower_name: MyString
+  borrower_id: MyString
+  bank_name: MyString
+  guarantee_number: MyString
+  value_guarantee: 1
+  currency_guarantee: MyString
+  due_date: 2019-03-05
+  state: MyString
+  bail: MyString
+  detail: MyString
+  bip: MyString
+  devolution_number: MyString
+  devolution_date: 2019-03-05
+  devolution_return: MyString
+  sectorialist_devolution: MyString
+  email: MyString
+  technical_unit: MyString
+  observation: MyText
+
+two:
+  correlative: 1
+  income_number: MyString
+  income_date: 2019-03-05
+  income_applicant: MyString
+  borrower_name: MyString
+  borrower_id: MyString
+  bank_name: MyString
+  guarantee_number: MyString
+  value_guarantee: 1
+  currency_guarantee: MyString
+  due_date: 2019-03-05
+  state: MyString
+  bail: MyString
+  detail: MyString
+  bip: MyString
+  devolution_number: MyString
+  devolution_date: 2019-03-05
+  devolution_return: MyString
+  sectorialist_devolution: MyString
+  email: MyString
+  technical_unit: MyString
+  observation: MyText
