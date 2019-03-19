@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "BlackSails"
-set :repo_url, "git@github.com:FranciscoMunozS/BlackSails.git"
+set :repo_url, "http://github.com/FranciscoMunozS/BlackSails"
 
 set :deploy_to, '/home/deploy/BlackSails'
 
