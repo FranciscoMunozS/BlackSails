@@ -6,11 +6,13 @@ require 'capistrano/passenger'
 
 require 'capistrano/rbenv'
 
+require "capistrano/deploy"
+
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.1'
 
 # Include default deployment tasks
-require "capistrano/deploy"
+
 
 # Load the SCM plugin appropriate to your project:
 #
