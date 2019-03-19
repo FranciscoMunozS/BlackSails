@@ -29,7 +29,7 @@ class GuaranteesController < ApplicationController
 
     respond_to do |format|
       if @guarantee.save
-        format.html { redirect_to @guarantee, notice: 'Guarantee was successfully created.' }
+        format.html { redirect_to @guarantee, notice: 'Registro creado existosamente.' }
         format.json { render :show, status: :created, location: @guarantee }
       else
         format.html { render :new }
@@ -43,7 +43,10 @@ class GuaranteesController < ApplicationController
   def update
     respond_to do |format|
       if @guarantee.update(guarantee_params)
-        format.html { redirect_to @guarantee, notice: 'Guarantee was successfully updated.' }
+
+        SendEmailJob.set(wait: @guarantee.notification.days).perform_later(@guarantee)
+
+        format.html { redirect_to @guarantee, notice: 'Registro actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @guarantee }
       else
         format.html { render :edit }
@@ -57,7 +60,7 @@ class GuaranteesController < ApplicationController
   def destroy
     @guarantee.destroy
     respond_to do |format|
-      format.html { redirect_to guarantees_url, notice: 'Guarantee was successfully destroyed.' }
+      format.html { redirect_to guarantees_url, notice: 'Registro eliminado.' }
       format.json { head :no_content }
     end
   end

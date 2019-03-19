@@ -21,6 +21,7 @@ gem 'enumerize', '~> 2.2', '>= 2.2.2'
 gem 'auto_increment', '~> 1.5'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'devise', '~> 4.6', '>= 4.6.1'
+gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.3'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

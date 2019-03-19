@@ -18,7 +18,9 @@ class Guarantee < ApplicationRecord
   enumerize :guarantee_type, in: [:GARANTIA, :VALE_VISTA, :LETRA_CAMBIO, :CERTIFICADO_PRORROGA, :CERTIFICADO_FIANZA, :POLIZA_GARANTIA, :PAGARE, :CERTIFICADO]
 
   def calculate_days
-    self.notification = (income_date...notification_date).count
+    if notification_date.present?
+      self.notification = (notification_date - updated_at).to_i
+    end
   end
 
 end
