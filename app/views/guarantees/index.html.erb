@@ -28,7 +28,7 @@
         <td class="text-center"><%= guarantee.correlative %></td>
         <td class="text-center"><%= guarantee.income_number %></td>
         <td class="text-center"><%= guarantee.detail %></td>
-        <td class="text-center"><%= guarantee.value_guarantee %></td>
+        <td class="text-center"><%= number_to_currency_clp(guarantee.value_guarantee) %></td>
         <td class="text-center">
           <div class="btn-group btn-group-sm">
             <%= link_to 'Imprimir', guarantee_path(guarantee), class: 'btn btn-primary' %>
