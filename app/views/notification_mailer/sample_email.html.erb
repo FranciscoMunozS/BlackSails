@@ -4,9 +4,16 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hi <%= @guarantee.income_number %></h1>
-    <p>
-      Correo de prueba
-    </p>
+    <h2>Estimad@</h2>
+    <hr>
+    <p>La siguiente boleta esta por vencer</p>
+    <p>Fecha de vencimiento: <%= @guarantee.due_date %></p>
+    <p>BIP: <%= @guarantee.bip %></p>
+    <p>Boleta de garantia Nº <%= @guarantee.guarantee_number %></p>
+    <p>Valor: <%= @guarantee.value_guarantee %> <%= @guarantee.currency_guarantee %></p>
+    <p>Caución: <%= @guarantee.bail %></p>
+    <p>Proyecto: <%= @guarantee.detail %></p>
+    <p>Tomador: <%= @guarantee.borrower_name %></p>
+    <p>Sectorialista: <%= @guarantee.sectorialist_devolution %></p>
   </body>
 </html>

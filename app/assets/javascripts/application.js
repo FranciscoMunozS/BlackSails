@@ -19,24 +19,28 @@ $(document).on('turbolinks:load', function() {
 
 $(document).on('turbolinks:load', function(){
   $('.datepicker0').datepicker({
-    language: 'es'
+    format: "mm/dd/yyyy",
+    language: "es"
   });
 });
 
 $(document).on('turbolinks:load', function(){
   $('.datepicker1').datepicker({
-    language: 'es'
+    format: "mm/dd/yyyy",
+    language: "es"
   });
 });
 
 $(document).on('turbolinks:load', function(){
   $('.datepicker2').datepicker({
-    language: 'es'
+    format: "mm/dd/yyyy",
+    language: "es"
   });
 });
 
 $(document).on('turbolinks:load', function(){
   $('.notification_date').datepicker({
-    language: 'es'
+    format: "mm/dd/yyyy",
+    language: "es"
   });
 });
