@@ -8,8 +8,8 @@ class CreateGuarantees < ActiveRecord::Migration[5.2]
       t.string :borrower_name
       t.string :borrower_id
       t.string :bank_name
-      t.string :guarantee_type
       t.string :guarantee_number
+      t.string :guarantee_type
       t.integer :value_guarantee
       t.string :currency_guarantee
       t.date :due_date

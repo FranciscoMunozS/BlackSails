@@ -29,7 +29,7 @@ class GuaranteesController < ApplicationController
 
     respond_to do |format|
       if @guarantee.save
-        format.html { redirect_to @guarantee, notice: 'Registro creado existosamente.' }
+        format.html { redirect_to root_path, notice: 'Registro creado existosamente.' }
         format.json { render :show, status: :created, location: @guarantee }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class GuaranteesController < ApplicationController
 
         SendEmailJob.set(wait: @guarantee.notification.days).perform_later(@guarantee)
 
-        format.html { redirect_to @guarantee, notice: 'Registro actualizado correctamente.' }
+        format.html { redirect_to root_path, notice: 'Registro actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @guarantee }
       else
         format.html { render :edit }
