@@ -18,7 +18,7 @@
       <th class="text-center">Correlativo</th>
       <th class="text-center">Nº Ingreso</th>
       <th class="text-center">Detalle</th>
-      <th class="text-center">Valor de Garantía</th>
+      <th class="text-center">Estado</th>
       <th class="text-center">Acciones</th>
     </tr>
   </thead>
@@ -28,7 +28,11 @@
         <td class="text-center"><%= guarantee.correlative %></td>
         <td class="text-center"><%= guarantee.income_number %></td>
         <td class="text-center"><%= guarantee.detail %></td>
-        <td class="text-center"><%= number_to_currency_clp(guarantee.value_guarantee) %></td>
+        <% if guarantee.state.present? %>
+          <td class="text-center"><%= guarantee.state %></td>
+        <% else %>
+          <td class="text-center">SIN ESTADO DEFINIDO</td>
+        <% end %>
         <td class="text-center">
           <div class="btn-group btn-group-sm">
             <%= link_to 'Imprimir', guarantee_path(guarantee), class: 'btn btn-primary' %>
