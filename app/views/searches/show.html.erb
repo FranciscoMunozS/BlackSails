@@ -1,0 +1,62 @@
+<h1>Resultado de Busqueda</h1>
+<hr>
+<% if @search.search_guarantees.empty? %>
+  <p>Sin Registros</p>
+<% else %>
+  <% @search.search_guarantees.each do |c| %>
+    <div class="card">
+      <h4 class="card-header">
+        <%= c.detail %>
+      </h4>
+      <div class="card-body">
+        <h4>Datos Boleta</h4>
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Numero Correlativo: <%= c.correlative %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Numero Ingreso: <%= c.income_number %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Fecha Ingreso: <%= c.income_date %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Nombre Proveedor: <%= c.borrower_name %></p>
+          </div>
+          <div class="col-md-4">
+            <p>RUT Proveedor: <%= c.borrower_id %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Banco: <%= c.bank_name %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Numero Boleta: <%= c.guarantee_number %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Tipo Boleta: <%= c.guarantee_type %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Valor Boleta: <%= c.value_guarantee %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Moneda: <%= c.currency_guarantee %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Fecha Vencimiento: <%= c.due_date %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Estado: <%= c.state %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  <% end %>
+<% end %>

@@ -1,0 +1,45 @@
+<h4>Busqueda Avanzada</h4>
+<p>Ingrese uno de los siguientes campos para realizar la busqueda avanzada.</p>
+<hr>
+<%= simple_form_for(@search) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.input :guarantee_number, label: "Numero Boleta de Garantia" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :borrower_id, label: 'RUT Proveedor' %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :borrower_name, label: 'Nombre Proveedor' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.input :value_guarantee, label: 'Valor Boleta' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.input :sectorialist_devolution, label: 'Analista' %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-primary' %>
+        <%= link_to 'Cancelar', root_path, class: 'btn btn-light' %>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>

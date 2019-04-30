@@ -7,16 +7,19 @@
   <div class="col-md-6">
     <p class="text-right">
       <%= link_to 'Agregar Nuevo Registro', new_guarantee_path, class: 'btn btn-primary'  %>
+      <%= link_to "Busqueda Avanzada", new_search_path, class: 'btn btn-primary' %>
     </p>
   </div>
 </div>
 <hr>
 
-<table class="table table-bordered" id="dttb">
+<table class="table table-striped" id="dttb">
   <thead>
     <tr>
       <th class="text-center">Correlativo</th>
-      <th class="text-center">Nº Ingreso</th>
+      <th class="text-center">Numero Boleta</th>
+      <th class="text-center">Proveedor</th>
+      <th class="text-center">Analista</th>
       <th class="text-center">Detalle</th>
       <th class="text-center">Estado</th>
       <th class="text-center">Acciones</th>
@@ -27,6 +30,8 @@
       <tr>
         <td class="text-center"><%= guarantee.correlative %></td>
         <td class="text-center"><%= guarantee.income_number %></td>
+        <td class="text-center"><%= guarantee.borrower_name %></td>
+        <td class="text-center"><%= guarantee.sectorialist_devolution %></td>
         <td class="text-center"><%= guarantee.detail %></td>
         <% if guarantee.state.present? %>
           <td class="text-center"><%= guarantee.state %></td>
@@ -36,8 +41,8 @@
         <td class="text-center">
           <div class="btn-group btn-group-sm">
             <%= link_to 'Imprimir', guarantee_path(guarantee), class: 'btn btn-primary' %>
-            <%= link_to 'Editar', edit_guarantee_path(guarantee), class: 'btn btn-primary' %>
-            <%= link_to 'Eliminar', guarantee, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+            <%= link_to 'Ver', edit_guarantee_path(guarantee), class: 'btn btn-primary' %>
+            <%= link_to 'Borrar', guarantee, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
           </div>
         </td>
       </tr>
