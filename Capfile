@@ -9,6 +9,8 @@ require 'capistrano/passenger'
 
 # If you are using rbenv add these lines:
 require 'capistrano/rbenv'
+
+require 'capistrano/rake'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.1'
 
