@@ -7,7 +7,9 @@
   <div class="col-md-6">
     <p class="text-right">
       <%= link_to 'Agregar Nuevo Registro', new_guarantee_path, class: 'btn btn-primary'  %>
-      <%= link_to "Busqueda Avanzada", new_search_path, class: 'btn btn-primary' %>
+      <%= link_to new_search_path, class: 'btn btn-primary' do %>
+        Busqueda Avanzada
+      <% end %>
     </p>
   </div>
 </div>
@@ -39,10 +41,16 @@
           <td class="text-center">SIN ESTADO DEFINIDO</td>
         <% end %>
         <td class="text-center">
-          <div class="btn-group btn-group-sm">
-            <%= link_to 'Imprimir', guarantee_path(guarantee), class: 'btn btn-primary' %>
-            <%= link_to 'Ver', edit_guarantee_path(guarantee), class: 'btn btn-primary' %>
-            <%= link_to 'Borrar', guarantee, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+          <div class="btn-group">
+            <%= link_to guarantee_path(guarantee), class: 'btn btn-primary' do %>
+              <% icon('fas', 'print') %>
+            <% end %>
+            <%= link_to edit_guarantee_path(guarantee), class: 'btn btn-primary' do %>
+              <% icon('fas', 'edit') %>
+            <% end %>
+            <%= link_to guarantee, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-primary' do %>
+              <% icon('fas', 'trash-alt') %>
+            <% end %>
           </div>
         </td>
       </tr>

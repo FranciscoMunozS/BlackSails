@@ -266,3 +266,5 @@ en:
       guarantee:
         create: 'Crear Registro'
         update: 'Actualizar Registro'
+      search:
+        create: 'Buscar Registros'
