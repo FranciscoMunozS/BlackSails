@@ -7,9 +7,11 @@
   <div class="col-md-6">
     <p class="text-right">
       <%= link_to 'Agregar Nuevo Registro', new_guarantee_path, class: 'btn btn-primary'  %>
-      <%= link_to 'Exportar', guarantees_path(format: "xlsx"), class: 'btn btn-success'  %>
       <%= link_to new_search_path, class: 'btn btn-primary' do %>
         Busqueda Avanzada
+      <% end %>
+      <%= link_to guarantees_path(format: "xlsx"), class: 'btn btn-success' do %>
+        <% icon('far', 'file-excel') %>
       <% end %>
     </p>
   </div>
@@ -31,11 +33,31 @@
   <tbody>
     <% @guarantees.each do |guarantee| %>
       <tr>
-        <td class="text-center"><%= guarantee.correlative %></td>
-        <td class="text-center"><%= guarantee.guarantee_number %></td>
-        <td class="text-center"><%= guarantee.borrower_name %></td>
-        <td class="text-center"><%= guarantee.sectorialist_devolution %></td>
-        <td class="text-center"><%= guarantee.detail %></td>
+        <% if guarantee.correlative.present? %>
+          <td class="text-center"><%= guarantee.correlative %></td>
+        <% else %>
+          <td class="text-center">SIN CORRELATIVO DEFINIDO</td>
+        <% end %>
+        <% if guarantee.guarantee_number.present? %>
+          <td class="text-center"><%= guarantee.guarantee_number %></td>
+        <% else %>
+          <td class="text-center">SIN NUMERO DEFINIDO</td>
+        <% end %>
+        <% if guarantee.guarantee_number.present? %>
+          <td class="text-center"><%= guarantee.borrower_name %></td>
+        <% else %>
+          <td class="text-center">SIN PROVEEDOR DEFINIDO</td>
+        <% end %>
+        <% if guarantee.sectorialist_devolution.present? %>
+          <td class="text-center"><%= guarantee.sectorialist_devolution %></td>
+        <% else %>
+          <td class="text-center">SIN ANALISTA DEFINIDO</td>
+        <% end %>
+        <% if guarantee.detail.present? %>
+          <td class="text-center"><%= guarantee.detail %></td>
+        <% else %>
+          <td class="text-center">SIN DETALLE DEFINIDO</td>
+        <% end %>
         <% if guarantee.state.present? %>
           <td class="text-center"><%= guarantee.state %></td>
         <% else %>

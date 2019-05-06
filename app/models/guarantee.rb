@@ -9,7 +9,7 @@ class Guarantee < ApplicationRecord
                             :EDWARDS, :INTERNACIONAL, :ITAU, :SECURITY, :PROAVAL, :HDI, :CONSORCIO, :FIRST_AVAL, :NOTARIA,
                             :MASAVAL, :BCI, :-]
 
-  enumerize :state, in: [:DEVUELTA, :VENCIDA, :VIGENTE, :-]
+  enumerize :state, in: [:DEVUELTA, :VENCIDA, :VIGENTE, :-], default: :VIGENTE
 
   enumerize :currency_guarantee, in: [:UF, :CLP, :EUR, :US, :-]
 
