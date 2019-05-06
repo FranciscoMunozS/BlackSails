@@ -7,7 +7,7 @@ class GuaranteesController < ApplicationController
   def index
     @guarantees = Guarantee.all
     @excel = Guarantee.all
-    
+
     respond_to do |format|
       format.html
       format.xlsx
@@ -50,7 +50,7 @@ class GuaranteesController < ApplicationController
     respond_to do |format|
       if @guarantee.update(guarantee_params)
 
-        #SendEmailJob.set(wait: @guarantee.notification.days).perform_later(@guarantee)
+        SendEmailJob.set(wait: @guarantee.notification.days).perform_later(@guarantee)
 
         format.html { redirect_to root_path, notice: 'Registro actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @guarantee }
@@ -79,6 +79,6 @@ class GuaranteesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guarantee_params
-      params.require(:guarantee).permit(:correlative, :income_number, :income_date, :income_applicant, :borrower_name, :borrower_id, :bank_name, :guarantee_type, :guarantee_number, :value_guarantee, :currency_guarantee, :due_date, :state, :bail, :detail, :bip, :devolution_number, :devolution_date, :devolution_return, :sectorialist_devolution, :email, :technical_unit, :observation, :notification_date, :notification)
+      params.require(:guarantee).permit(:correlative, :income_number, :income_date, :income_applicant, :borrower_name, :borrower_id, :bank_name, :guarantee_type, :guarantee_number, :value_guarantee, :currency_guarantee, :due_date, :state, :bail, :detail, :bip, :devolution_number, :devolution_date, :devolution_return, :sectorialist_devolution, :email, :technical_unit, :observation, :notification)
     end
 end
