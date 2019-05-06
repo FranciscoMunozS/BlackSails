@@ -22,5 +22,5 @@ class Guarantee < ApplicationRecord
       self.notification = (notification_date - updated_at).to_i
     end
   end
-  
+
 end
