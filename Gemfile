@@ -26,6 +26,7 @@ gem 'daemons', '~> 1.3', '>= 1.3.1'
 gem 'seed_dump', '~> 3.3', '>= 3.3.1'
 gem 'font-awesome-sass', '~> 5.8', '>= 5.8.1'
 gem 'rb-readline', '~> 0.5.5'
+gem 'axlsx_rails', '~> 0.5.2'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

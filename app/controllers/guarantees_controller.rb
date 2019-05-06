@@ -6,6 +6,12 @@ class GuaranteesController < ApplicationController
   # GET /guarantees.json
   def index
     @guarantees = Guarantee.all
+    @excel = Guarantee.all
+    
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   # GET /guarantees/1
