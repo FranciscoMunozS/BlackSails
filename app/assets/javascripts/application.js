@@ -12,35 +12,35 @@
 $(document).on('turbolinks:load', function() {
   $("#dttb").dataTable({
     language: {
-        url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
+        url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json',
     }
   });
 });
 
 $(document).on('turbolinks:load', function(){
   $('.datepicker0').datepicker({
-    format: "mm/dd/yyyy",
+    format: "dd/mm/yyyy",
     language: "es"
   });
 });
 
 $(document).on('turbolinks:load', function(){
   $('.datepicker1').datepicker({
-    format: "mm/dd/yyyy",
+    format: "dd/mm/yyyy",
     language: "es"
   });
 });
 
 $(document).on('turbolinks:load', function(){
   $('.datepicker2').datepicker({
-    format: "mm/dd/yyyy",
+    format: "dd/mm/yyyy",
     language: "es"
   });
 });
 
 $(document).on('turbolinks:load', function(){
   $('.notification_date').datepicker({
-    format: "mm/dd/yyyy",
+    format: "dd/mm/yyyy",
     language: "es"
   });
 });
