@@ -49,9 +49,10 @@ class GuaranteesController < ApplicationController
   def update
     respond_to do |format|
       if @guarantee.update(guarantee_params)
-
-        #SendEmailJob.set(wait: @guarantee.notification.days).perform_later(@guarantee)
-
+        if @guarantee_due.present?
+          SendEmailJob.set(wait: @guarantee.notification.days).perform_later(@guarantee)
+        end
+        
         format.html { redirect_to root_path, notice: 'Registro actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @guarantee }
       else
