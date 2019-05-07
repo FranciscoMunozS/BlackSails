@@ -35,7 +35,7 @@ class GuaranteesController < ApplicationController
 
     respond_to do |format|
       if @guarantee.save
-        format.html { redirect_to root_path, notice: 'Registro creado existosamente.' }
+        format.html { redirect_to root_path, flash: { success: 'Registro creado correctamente'} }
         format.json { render :show, status: :created, location: @guarantee }
       else
         format.html { render :new }
@@ -52,8 +52,8 @@ class GuaranteesController < ApplicationController
         if @guarantee_due.present?
           SendEmailJob.set(wait: @guarantee.notification.days).perform_later(@guarantee)
         end
-        
-        format.html { redirect_to root_path, notice: 'Registro actualizado correctamente.' }
+
+        format.html { redirect_to root_path, flash: { success: 'Registro actualizado correctamente.'} }
         format.json { render :show, status: :ok, location: @guarantee }
       else
         format.html { render :edit }
@@ -67,7 +67,7 @@ class GuaranteesController < ApplicationController
   def destroy
     @guarantee.destroy
     respond_to do |format|
-      format.html { redirect_to guarantees_url, notice: 'Registro eliminado.' }
+      format.html { redirect_to guarantees_url, flash: { error: 'Registro eliminado.' } }
       format.json { head :no_content }
     end
   end
