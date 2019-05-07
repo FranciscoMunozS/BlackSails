@@ -49,7 +49,7 @@ class GuaranteesController < ApplicationController
   def update
     respond_to do |format|
       if @guarantee.update(guarantee_params)
-        if @guarantee_due.present?
+        if @guarantee.due_date.present && @guarantee.income_date?
           SendEmailJob.set(wait: @guarantee.notification.days).perform_later(@guarantee)
         end
 
