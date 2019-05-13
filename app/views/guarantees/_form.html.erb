@@ -45,10 +45,12 @@
         <%= f.input :email, label: "Correo Electronico" %>
         <%= f.input :observation, label: "Observación", input_html: { rows: 2 } %>
       </div>
+      <div class="card-footer">
+        <div class="form-actions">
+          <%= f.button :submit, class: 'btn btn-primary' %>
+          <%= link_to 'Cancelar', root_path, class: 'btn btn-secondary' %>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
-    <%= link_to 'Cancelar', root_path, class: 'btn btn-light' %>
   </div>
 <% end %>

@@ -25,17 +25,17 @@
 </div>
 <hr>
 <div class="table-responsive-xl">
-  <table class="table table-striped" id="dttb">
+  <table class="table table-striped text-center" id="dttb">
     <thead>
       <tr>
-        <th class="text-center">Correlativo</th>
-        <th class="text-center">Numero Boleta</th>
-        <th class="text-center">Proveedor</th>
-        <th class="text-center">Analista</th>
-        <th class="text-center">Detalle</th>
-        <th class="text-center">Estado</th>
+        <th>Correlativo</th>
+        <th>Numero Boleta</th>
+        <th>Proveedor</th>
+        <th>Analista</th>
+        <th>Detalle</th>
+        <th>Estado</th>
         <% if user_signed_in? %>
-          <th class="text-center">Acciones</th>
+          <th>Acciones</th>
         <% end %>
       </tr>
     </thead>
@@ -43,37 +43,37 @@
       <% @guarantees.each do |guarantee| %>
         <tr>
           <% if guarantee.correlative.present? %>
-            <td class="text-center"><%= guarantee.correlative %></td>
+            <td><%= guarantee.correlative %></td>
           <% else %>
-            <td class="text-center">SIN CORRELATIVO DEFINIDO</td>
+            <td>SIN CORRELATIVO DEFINIDO</td>
           <% end %>
           <% if guarantee.guarantee_number.present? %>
-            <td class="text-center"><%= guarantee.guarantee_number %></td>
+            <td><%= guarantee.guarantee_number %></td>
           <% else %>
-            <td class="text-center">SIN NUMERO DEFINIDO</td>
+            <td>SIN NUMERO DEFINIDO</td>
           <% end %>
           <% if guarantee.guarantee_number.present? %>
-            <td class="text-center"><%= guarantee.borrower_name %></td>
+            <td><%= guarantee.borrower_name %></td>
           <% else %>
-            <td class="text-center">SIN PROVEEDOR DEFINIDO</td>
+            <td>SIN PROVEEDOR DEFINIDO</td>
           <% end %>
           <% if guarantee.income_applicant.present? %>
-            <td class="text-center"><%= guarantee.income_applicant %></td>
+            <td><%= guarantee.income_applicant %></td>
           <% else %>
-            <td class="text-center">SIN ANALISTA DEFINIDO</td>
+            <td>SIN ANALISTA DEFINIDO</td>
           <% end %>
           <% if guarantee.detail.present? %>
-            <td class="text-center"><%= guarantee.detail %></td>
+            <td><%= guarantee.detail %></td>
           <% else %>
-            <td class="text-center">SIN DETALLE DEFINIDO</td>
+            <td>SIN DETALLE DEFINIDO</td>
           <% end %>
           <% if guarantee.state.present? %>
-            <td class="text-center"><%= guarantee.state %></td>
+            <td><%= guarantee.state %></td>
           <% else %>
-            <td class="text-center">SIN ESTADO DEFINIDO</td>
+            <td>SIN ESTADO DEFINIDO</td>
           <% end %>
           <% if user_signed_in? %>
-            <td class="text-center">
+            <td>
               <%= link_to guarantee_path(guarantee), class: 'btn btn-primary' do %>
                 <% icon('fas', 'print') %>
               <% end %>
