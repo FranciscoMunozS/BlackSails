@@ -1,4 +1,7 @@
 en:
+  time:
+    formats:
+      chile: "%d/%m/%Y"
   enumerize:
     guarantee:
       bank_name:

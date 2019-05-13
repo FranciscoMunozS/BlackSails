@@ -7,10 +7,9 @@
 //= require datatables
 //= require bootstrap-datepicker
 //= require toastr
-//= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   toastr.options = {
     "closeButton": false,
     "debug": false,
@@ -27,7 +26,16 @@ $(document).on('turbolinks:load', function(){
   }
 });
 
-$(document).on('turbolinks:load', function() {
+$(document).ready(function(){
+  $(".alert").alert();
+  window.setTimeout(function() {
+    $(".alert").slideUp(function() {
+      $(".alert").alert('close');
+    });
+  }, 5000);
+});
+
+$(document).ready(function() {
   $("#dttb").dataTable({
     language: {
         url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
@@ -36,28 +44,28 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   $('.datepicker0').datepicker({
     format: "dd/mm/yyyy",
     language: "es"
   });
 });
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   $('.datepicker1').datepicker({
     format: "dd/mm/yyyy",
     language: "es"
   });
 });
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   $('.datepicker2').datepicker({
     format: "dd/mm/yyyy",
     language: "es"
   });
 });
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   $('.notification_date').datepicker({
     format: "dd/mm/yyyy",
     language: "es"

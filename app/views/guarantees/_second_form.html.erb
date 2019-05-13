@@ -9,7 +9,7 @@
         <%= f.input :correlative, label: "Correlativo", disabled: true %>
         <%= f.input :state, label: "Estado boleta" %>
         <%= f.input :devolution_number, label: "Numero de Devolución" %>
-        <%= f.input :devolution_date, as: :string, label: "Fecha de Devolución", input_html: { class: 'datepicker2' } %>
+        <%= f.input :devolution_date, as: :string, label: "Fecha de Devolución", input_html: { class: 'datepicker2' }, format: :chile %>
         <%= f.input :devolution_return, label: "Medio de Devolución" %>
         <%= f.input :sectorialist_devolution, label: "Sectorialista Devolución" %>
         <%= f.input :technical_unit, label: "Unidad Tecnica" %>

@@ -19,9 +19,7 @@
       </script>
     <% end %>
 
-    <% if user_signed_in? %>
-      <%= render 'assets/nav' %>
-    <% end %>
+    <%= render 'assets/nav' %>
     <br>
     <div class="container">
       <%= yield %>

@@ -1,6 +1,6 @@
 class GuaranteesController < ApplicationController
   before_action :set_guarantee, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [ :index ]
 
   # GET /guarantees
   # GET /guarantees.json
