@@ -1,7 +1,7 @@
 class Guarantee < ApplicationRecord
   extend Enumerize
 
-  before_save :calculate_days
+  #before_save :calculate_days
 
   auto_increment :correlative
 
