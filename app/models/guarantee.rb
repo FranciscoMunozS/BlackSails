@@ -17,11 +17,11 @@ class Guarantee < ApplicationRecord
 
   enumerize :guarantee_type, in: [:GARANTIA, :VALE_VISTA, :LETRA_CAMBIO, :CERTIFICADO_PRORROGA, :CERTIFICADO_FIANZA, :POLIZA_GARANTIA, :PAGARE, :CERTIFICADO]
 
-  def calculate_days
-    if due_date.present?
-      self.notification = (due_date - income_date).to_i
-      self.notification = (notification - 30)
-    end
-  end
+  #def calculate_days
+  #  if due_date.present?
+  #    self.notification = (due_date - income_date).to_i
+  #    self.notification = (notification - 30)
+  #  end
+  #end
 
 end
